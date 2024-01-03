@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CatalinProiect2.props" />
+</Project>
