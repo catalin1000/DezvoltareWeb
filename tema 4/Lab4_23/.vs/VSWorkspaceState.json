@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Models",
+    "\\Models\\Base",
+    "\\Models\\DTOs",
+    "\\Models\\Many-to-Many",
+    "\\Models\\One-to-Many",
+    "\\Models\\One-to-One",
+    "\\obj",
+    "\\obj\\Debug",
+    "\\Properties"
+  ],
+  "SelectedNode": "\\Models\\Client.cs",
+  "PreviewInSolutionExplorer": false
+}
