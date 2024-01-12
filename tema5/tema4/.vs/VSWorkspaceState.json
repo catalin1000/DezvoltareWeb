@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Data",
+    "\\Migrations",
+    "\\Models",
+    "\\obj",
+    "\\obj\\Debug",
+    "\\Properties",
+    "\\Repositories",
+    "\\Repositories\\ClientRepository",
+    "\\Repositories\\GenericRepository"
+  ],
+  "SelectedNode": "\\WeatherForecast.cs",
+  "PreviewInSolutionExplorer": false
+}
