@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<br />
+
+<h2 class="text-center">Afisare bauturi</h2>
+
+<br />
+
+@if (TempData["message"] != null)
+{
+    <div class="alert @ViewBag.Alert p-3 rounded-3 text-center mb-5">
+        @ViewBag.Message
+    </div>
+}
+
+<br />
+
+<form method="GET">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control"
+               placeholder="Search topics or keywords" name="search"
+               value="@ViewBag.SearchString">
+        <button class="btn btn-outline-success"
+                type="submit">
+            Search
+        </button>
+    </div>
+</form>
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <label class="form-label">Sort By:</label>
+        <a class="btn btn-outline-secondary" href="?sortOrder=Price&sortDirection=asc">Pret <i class="bi bi-arrow-up"></i></a>
+        <a class="btn btn-outline-secondary" href="?sortOrder=Price&sortDirection=desc">Pret <i class="bi bi-arrow-down"></i></a>
+        <a class="btn btn-outline-secondary" href="?sortOrder=Rating&sortDirection=asc">Rating <i class="bi bi-arrow-up"></i></a>
+        <a class="btn btn-outline-secondary" href="?sortOrder=Rating&sortDirection=desc">Rating <i class="bi bi-arrow-down"></i></a>
+
+    </div>
+
+</div>
+
+
+@* Afisarea paginata a bauturilor *@
+<div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link"
+                   href="@ViewBag.PaginationBaseUrl=1&sortOrder=@ViewBag.SortOrder&sortDirection=@ViewBag.SortDirection" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            @for (int i = 1; i <= ViewBag.lastPage; i++)
+            {
+                <li class="page-item">
+                    <a class="page-link"
+                       href="@ViewBag.PaginationBaseUrl=@i&sortOrder=@ViewBag.SortOrder&sortDirection=@ViewBag.SortDirection">@(i)</a>
+                </li>
+            }
+            <li class="page-item">
+                <a class="page-link"
+                   href="@ViewBag.PaginationBaseUrl=@(ViewBag.lastPage)&sortOrder=@ViewBag.SortOrder&sortDirection=@ViewBag.SortDirection" aria-
+                   label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+@foreach (CatalinProiect2.Models.Drink drink in ViewBag.Drinks)
+{
+    <div class="card">
+
+        @Html.Partial("DrinkInfo", drink)
+        <a class="btn btn-success" href="/Articles/Show/@drink.Id">Afisare bautura</a>
+
+    </div>
+
+    <br />
+    <br />
+}
+
+

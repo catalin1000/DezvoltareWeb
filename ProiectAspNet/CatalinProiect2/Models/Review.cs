@@ -10,6 +10,9 @@ namespace CatalinProiect2.Models
         [Required(ErrorMessage = "Continutul comentariului este obligatoriu")]
         public string Content { get; set; }
 
+        [Required(ErrorMessage = "Numarul de stele este obligatoriu")]
+        public int? Rating { get; set; }
+
         public DateTime Date { get; set; }
 
         // un comentariu apartine unui articol

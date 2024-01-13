@@ -4,6 +4,7 @@ using CatalinProiect2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CatalinProiect2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240113134710_cata")]
+    partial class cata
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,16 +157,6 @@ namespace CatalinProiect2.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float?>("Price")
-                        .IsRequired()
-                        .HasColumnType("real");
-
-                    b.Property<int?>("Rating")
-                        .HasColumnType("int");
-
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -220,10 +212,6 @@ namespace CatalinProiect2.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("DrinkId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Rating")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")

@@ -9,9 +9,13 @@ namespace CatalinProiect2.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Titlul este obligatoriu")]
-        [StringLength(100, ErrorMessage = "Titlul nu poate avea mai mult de 100 de caractere")]
+        [Required(ErrorMessage = "Nume este obligatoriu")]
+        [StringLength(100, ErrorMessage = "Numele nu poate avea mai mult de 100 de caractere")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Pretul produsului este obligatoriu")]
+        public float? Price { get; set; }
+        public int? Rating { get; set; }
 
         [Required(ErrorMessage = "Continutul articolului este obligatoriu")]
         public string Content { get; set; }
@@ -42,6 +46,8 @@ namespace CatalinProiect2.Models
 
         // relatia many-to-many dintre Drink si Bookmark
         public virtual ICollection<DrinkBookmark>? DrinkBookmarks { get; set; }
+
+        public string? Photo { get; set; }
     }
 
 }

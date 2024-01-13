@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Corina\\OneDrive\\Desktop\\F2\\ASP\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj": {}
+    "C:\\Users\\bossc\\OneDrive\\Desktop\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Corina\\OneDrive\\Desktop\\F2\\ASP\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj": {
+    "C:\\Users\\bossc\\OneDrive\\Desktop\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Corina\\OneDrive\\Desktop\\F2\\ASP\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj",
+        "projectUniqueName": "C:\\Users\\bossc\\OneDrive\\Desktop\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj",
         "projectName": "CatalinProiect2",
-        "projectPath": "C:\\Users\\Corina\\OneDrive\\Desktop\\F2\\ASP\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj",
-        "packagesPath": "C:\\Users\\Corina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Corina\\OneDrive\\Desktop\\F2\\ASP\\CatalinProiect2\\CatalinProiect2\\obj\\",
+        "projectPath": "C:\\Users\\bossc\\OneDrive\\Desktop\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj",
+        "packagesPath": "C:\\Users\\bossc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bossc\\OneDrive\\Desktop\\CatalinProiect2\\CatalinProiect2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Corina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bossc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
