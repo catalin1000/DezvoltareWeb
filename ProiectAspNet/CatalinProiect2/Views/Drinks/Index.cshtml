@@ -31,13 +31,12 @@
 <div class="row mb-3">
     <div class="col-md-6">
         <label class="form-label">Sort By:</label>
-        <a class="btn btn-outline-secondary" href="?sortOrder=Price&sortDirection=asc">Pret <i class="bi bi-arrow-up"></i></a>
-        <a class="btn btn-outline-secondary" href="?sortOrder=Price&sortDirection=desc">Pret <i class="bi bi-arrow-down"></i></a>
-        <a class="btn btn-outline-secondary" href="?sortOrder=Rating&sortDirection=asc">Rating <i class="bi bi-arrow-up"></i></a>
-        <a class="btn btn-outline-secondary" href="?sortOrder=Rating&sortDirection=desc">Rating <i class="bi bi-arrow-down"></i></a>
+        <a class="btn btn-outline-secondary" href="?sortOrder=Price&sortDirection=asc">Pret asc<i class="bi bi-arrow-up"></i></a>
+        <a class="btn btn-outline-secondary" href="?sortOrder=Price&sortDirection=desc">Pret desc<i class="bi bi-arrow-down"></i></a>
+        <a class="btn btn-outline-secondary" href="?sortOrder=Rating&sortDirection=asc">Rating asc<i class="bi bi-arrow-up"></i></a>
+        <a class="btn btn-outline-secondary" href="?sortOrder=Rating&sortDirection=desc">Rating desc<i class="bi bi-arrow-down"></i></a>
 
     </div>
-
 </div>
 
 
@@ -76,7 +75,7 @@
     <div class="card">
 
         @Html.Partial("DrinkInfo", drink)
-        <a class="btn btn-success" href="/Articles/Show/@drink.Id">Afisare bautura</a>
+        <a class="btn btn-success" href="/Drinks/Show/@drink.Id">Afisare bautura</a>
 
     </div>
 

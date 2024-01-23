@@ -2459,11 +2459,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bossc\\OneDrive\\Desktop\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj",
+      "projectUniqueName": "C:\\Users\\bossc\\OneDrive\\Desktop\\nou acum\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj",
       "projectName": "CatalinProiect2",
-      "projectPath": "C:\\Users\\bossc\\OneDrive\\Desktop\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj",
+      "projectPath": "C:\\Users\\bossc\\OneDrive\\Desktop\\nou acum\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj",
       "packagesPath": "C:\\Users\\bossc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bossc\\OneDrive\\Desktop\\CatalinProiect2\\CatalinProiect2\\obj\\",
+      "outputPath": "C:\\Users\\bossc\\OneDrive\\Desktop\\nou acum\\CatalinProiect2\\CatalinProiect2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bossc\\AppData\\Roaming\\NuGet\\NuGet.Config",

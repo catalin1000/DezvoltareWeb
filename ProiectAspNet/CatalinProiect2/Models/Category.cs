@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CatalinProiect2.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace CatalinProiect2.Models
 {
@@ -8,9 +9,8 @@ namespace CatalinProiect2.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Numele categoriei este obligatoriu")]
-        public string CategoryName { get; set; }
-
+        public string? CategoryName { get; set; }
         public virtual ICollection<Drink>? Drinks { get; set; }
-    }
 
+    }
 }

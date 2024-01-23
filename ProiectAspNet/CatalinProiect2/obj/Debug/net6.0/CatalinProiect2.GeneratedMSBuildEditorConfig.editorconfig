@@ -9,67 +9,99 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CatalinProiect2
 build_property.RootNamespace = CatalinProiect2
-build_property.ProjectDir = C:\Users\bossc\OneDrive\Desktop\CatalinProiect2\CatalinProiect2\
+build_property.ProjectDir = C:\Users\bossc\OneDrive\Desktop\nou acum\CatalinProiect2\CatalinProiect2\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\bossc\OneDrive\Desktop\CatalinProiect2\CatalinProiect2
+build_property.MSBuildProjectDirectory = C:\Users\bossc\OneDrive\Desktop\nou acum\CatalinProiect2\CatalinProiect2
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Categories/Index.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Categories/New.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Categories/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xOZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Drinks/Index.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Categories/Show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xTaG93LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Drinks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpbmtzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Drinks/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpbmtzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Drinks/New.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Drinks/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpbmtzXE5ldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Home/Index.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Drinks/Show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpbmtzXFNob3cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Home/Privacy.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Shared/DrinkInfo.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Orders/MyCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXE15Q2FydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Orders/Show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXFNob3cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Reviews/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Shared/DrinkInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERyaW5rSW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Shared/Error.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/_ViewImports.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/_ViewStart.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bossc/OneDrive/Desktop/CatalinProiect2/CatalinProiect2/Views/Shared/_Layout.cshtml]
+[C:/Users/bossc/OneDrive/Desktop/nou acum/CatalinProiect2/CatalinProiect2/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ogya9ua6n8

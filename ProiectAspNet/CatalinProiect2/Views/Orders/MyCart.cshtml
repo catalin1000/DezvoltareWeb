@@ -1,0 +1,41 @@
+﻿@model CatalinProiect2.Models.Order
+
+<div class="row">
+    <div class="col-12">
+        <br />
+        <br />
+        <h2 class=" font-weight-bold mb-4" style="font-size: 1.5rem !important; color: orange; text-decoration: underline;">Bauturile din cosul dumeavoastra:</h2>
+
+        <br /><br />
+    </div>
+
+    @if (Model.DrinkOrders != null && Model.DrinkOrders.Any())
+    {
+        @foreach (CatalinProiect2.Models.DrinkOrder drinkOrder in Model.DrinkOrders)
+        {
+            <div class="col-12">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        @Html.Partial("DrinkInfo", drinkOrder.Drink)
+                        <br>
+                        <form method="post" asp-action="DeleteDrink" asp-controller="Orders">
+                            <input type="hidden" name="Id" value="@drinkOrder.Id">
+                            <input type="hidden" name="OrderId" value="@drinkOrder.OrderId">
+                            <input type="hidden" name="DrinkId" value="@drinkOrder.DrinkId">
+                            <input type="hidden" name="returnUrl" value="/Orders/MyCart">
+                            <button class="btn btn-danger" type="submit">Sterge Bautura</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <a class="btn btn-success" href="/Orders/Order"> Cumpara bauturile</a>
+    }
+    else
+    {
+        <div class="col-12">
+            <p style="color: red;">Coșul este gol.</p>
+        </div>
+    }
+</div>

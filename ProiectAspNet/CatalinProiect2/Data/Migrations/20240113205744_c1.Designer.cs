@@ -4,6 +4,7 @@ using CatalinProiect2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CatalinProiect2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240113205744_c1")]
+    partial class c1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,6 +95,28 @@ namespace CatalinProiect2.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("CatalinProiect2.Models.Bookmark", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Bookmarks");
+                });
+
             modelBuilder.Entity("CatalinProiect2.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -118,24 +142,20 @@ namespace CatalinProiect2.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int?>("CategoryId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
@@ -147,16 +167,20 @@ namespace CatalinProiect2.Data.Migrations
                     b.Property<int?>("Rating")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationUserId");
-
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Drinks");
                 });
 
-            modelBuilder.Entity("CatalinProiect2.Models.DrinkOrder", b =>
+            modelBuilder.Entity("CatalinProiect2.Models.DrinkBookmark", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -167,43 +191,19 @@ namespace CatalinProiect2.Data.Migrations
                     b.Property<int?>("DrinkId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OrderId")
+                    b.Property<int?>("BookmarkId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id", "DrinkId", "OrderId");
+                    b.Property<DateTime>("BookmarkDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id", "DrinkId", "BookmarkId");
+
+                    b.HasIndex("BookmarkId");
 
                     b.HasIndex("DrinkId");
 
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("DrinkOrders");
-                });
-
-            modelBuilder.Entity("CatalinProiect2.Models.Order", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
-
-                    b.Property<DateTime?>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("IsCart")
-                        .HasColumnType("bit");
-
-                    b.Property<float?>("Price")
-                        .HasColumnType("real");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("OrderId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Orders");
+                    b.ToTable("DrinkBookmarks");
                 });
 
             modelBuilder.Entity("CatalinProiect2.Models.Review", b =>
@@ -214,14 +214,11 @@ namespace CatalinProiect2.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("DrinkId")
@@ -231,11 +228,14 @@ namespace CatalinProiect2.Data.Migrations
                         .IsRequired()
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationUserId");
-
                     b.HasIndex("DrinkId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
                 });
@@ -377,64 +377,64 @@ namespace CatalinProiect2.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("CatalinProiect2.Models.Drink", b =>
-                {
-                    b.HasOne("CatalinProiect2.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany("Drinks")
-                        .HasForeignKey("ApplicationUserId");
-
-                    b.HasOne("CatalinProiect2.Models.Category", "Category")
-                        .WithMany("Drinks")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ApplicationUser");
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("CatalinProiect2.Models.DrinkOrder", b =>
-                {
-                    b.HasOne("CatalinProiect2.Models.Drink", "Drink")
-                        .WithMany("DrinkOrders")
-                        .HasForeignKey("DrinkId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CatalinProiect2.Models.Order", "Order")
-                        .WithMany("DrinkOrders")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Drink");
-
-                    b.Navigation("Order");
-                });
-
-            modelBuilder.Entity("CatalinProiect2.Models.Order", b =>
+            modelBuilder.Entity("CatalinProiect2.Models.Bookmark", b =>
                 {
                     b.HasOne("CatalinProiect2.Models.ApplicationUser", "User")
-                        .WithMany("Orders")
+                        .WithMany("Bookmarks")
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("CatalinProiect2.Models.Drink", b =>
+                {
+                    b.HasOne("CatalinProiect2.Models.Category", "Category")
+                        .WithMany("Drinks")
+                        .HasForeignKey("CategoryId");
+
+                    b.HasOne("CatalinProiect2.Models.ApplicationUser", "User")
+                        .WithMany("Drinks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CatalinProiect2.Models.DrinkBookmark", b =>
+                {
+                    b.HasOne("CatalinProiect2.Models.Bookmark", "Bookmark")
+                        .WithMany("DrinkBookmarks")
+                        .HasForeignKey("BookmarkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CatalinProiect2.Models.Drink", "Drink")
+                        .WithMany("DrinkBookmarks")
+                        .HasForeignKey("DrinkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Bookmark");
+
+                    b.Navigation("Drink");
+                });
+
             modelBuilder.Entity("CatalinProiect2.Models.Review", b =>
                 {
-                    b.HasOne("CatalinProiect2.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany("Reviews")
-                        .HasForeignKey("ApplicationUserId");
-
                     b.HasOne("CatalinProiect2.Models.Drink", "Drink")
                         .WithMany("Reviews")
                         .HasForeignKey("DrinkId");
 
-                    b.Navigation("ApplicationUser");
+                    b.HasOne("CatalinProiect2.Models.ApplicationUser", "User")
+                        .WithMany("Reviews")
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Drink");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -490,11 +490,16 @@ namespace CatalinProiect2.Data.Migrations
 
             modelBuilder.Entity("CatalinProiect2.Models.ApplicationUser", b =>
                 {
+                    b.Navigation("Bookmarks");
+
                     b.Navigation("Drinks");
 
-                    b.Navigation("Orders");
-
                     b.Navigation("Reviews");
+                });
+
+            modelBuilder.Entity("CatalinProiect2.Models.Bookmark", b =>
+                {
+                    b.Navigation("DrinkBookmarks");
                 });
 
             modelBuilder.Entity("CatalinProiect2.Models.Category", b =>
@@ -504,14 +509,9 @@ namespace CatalinProiect2.Data.Migrations
 
             modelBuilder.Entity("CatalinProiect2.Models.Drink", b =>
                 {
-                    b.Navigation("DrinkOrders");
+                    b.Navigation("DrinkBookmarks");
 
                     b.Navigation("Reviews");
-                });
-
-            modelBuilder.Entity("CatalinProiect2.Models.Order", b =>
-                {
-                    b.Navigation("DrinkOrders");
                 });
 #pragma warning restore 612, 618
         }
