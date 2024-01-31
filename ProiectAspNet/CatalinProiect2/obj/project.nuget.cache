@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o9EVzdMBuxPh7KS1N4daJqeF/uYDlvBcKYb1WlOTJ1Vt8rWbDSxUtXRZxgdZF+B/S6u0NafTcjZvR9QqCz3Llw==",
+  "dgSpecHash": "iF7GfL2O/XDgchMv3UndFgTD1YhZ+7HvQwrEG98fmnfhFxJJfhqanfK+ePY4xwJlANWWpZjb9tR51hxq3wiMpg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bossc\\OneDrive\\Desktop\\nou acum\\CatalinProiect2\\CatalinProiect2\\CatalinProiect2.csproj",
+  "projectFilePath": "C:\\Users\\bossc\\OneDrive\\Desktop\\Proiect new repo asp net\\DezvoltareWeb\\ProiectAspNet\\CatalinProiect2\\CatalinProiect2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bossc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bossc\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.22\\microsoft.aspnetcore.cryptography.internal.6.0.22.nupkg.sha512",

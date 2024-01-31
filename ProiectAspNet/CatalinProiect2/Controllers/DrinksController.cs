@@ -40,12 +40,7 @@ namespace CatalinProiect2.Controllers
             _roleManager = roleManager;
         }
 
-        public object DrinkPhoto { get; private set; }
-
-        // Se afiseaza lista tuturor articolelor impreuna cu categoria 
-        // din care fac parte
-        // Pentru fiecare articol se afiseaza si userul care a postat articolul respectiv
-        // HttpGet implicit
+      
         [Authorize(Roles = "User,Editor,Admin")]
 
         public IActionResult Index(string sortOrder, string sortDirection)
@@ -73,24 +68,20 @@ namespace CatalinProiect2.Controllers
             {
                 search = Convert.ToString(HttpContext.Request.Query["search"]).Trim();
 
-                // Cautare in articol (Title si Content)
+             
                 List<int> drinksIds = db.Drinks
                                     .Where(
                                         at => at.Name.Contains(search)
                                         || at.Content.Contains(search)
                                     ).Select(a => a.Id).ToList();
 
-                // Cautare in comentarii (Content)
-
                 List<int> drinksIdsOfReviewsWithSearchString =
                             db.Reviews.Where
                             (c => c.Content.Contains(search)).Select(c => (int)c.DrinkId).ToList();
-                // Se formeaza o singura lista formata din toate id-urile selectate anterior
+                
 
                 List<int> mergedIds = drinksIds.Union(drinksIdsOfReviewsWithSearchString).ToList();
-                // Lista articolelor care contin cuvantul cautat
-                // fie in articol -> Title si Content
-                // fie in comentarii -> Content
+
                 drinks = db.Drinks.Where(drinks =>
                             mergedIds.Contains(drinks.Id))
                             .Include("Category")
@@ -101,7 +92,7 @@ namespace CatalinProiect2.Controllers
 
             // AFISARE PAGINATA
 
-            // Alegem sa afisam 3 articole pe pagina
+
             int _perPage = 3;
             if (TempData.ContainsKey("message"))
             {
@@ -109,20 +100,15 @@ namespace CatalinProiect2.Controllers
                 ViewBag.Alert = TempData["messageType"];
             }
 
-            // Fiind un numar variabil de bauturi, verificam de fiecare data utilizand metoda Count()
             int totalItems = drinks.Count();
 
-            // Se preia pagina curenta din View-ul asociat
-            // Numarul paginii este valoarea parametrului page din ruta
-            // /Articles/Index?page=valoare
+        
             var currentPage = Convert.ToInt32(HttpContext.Request.Query["page"]);
 
-            // Pentru prima pagina offsetul o sa fie zero
-            // Pentru pagina 2 o sa fie 3
-            // Asadar offsetul este egal cu numarul de articole care au fost deja afisate pe paginile anterioare
+           
             var offset = 0;
 
-            // Se calculeaza offsetul in functie de numarul paginii la care suntem
+            
             if (!currentPage.Equals(0))
             {
                 offset = (currentPage - 1) * _perPage;
@@ -146,15 +132,14 @@ namespace CatalinProiect2.Controllers
                     break;
             }
 
-            // Se preiau articolele corespunzatoare pentru fiecare pagina la care ne aflam
-            // in functie de offset
+        
             var paginatedDrinks = drinks.Skip(offset).Take(_perPage);
 
             ViewBag.Drinks = paginatedDrinks;
-            // Preluam numarul ultimei pagini
+         
 
             ViewBag.lastPage = Math.Ceiling((float)totalItems / (float)_perPage);
-            // Trimitem articolele cu ajutorul unui ViewBag catre View-ul corespunzator
+            
 
             if (search != "")
             {
@@ -444,6 +429,8 @@ namespace CatalinProiect2.Controllers
             }
 
         }
+
+
         [HttpPost]
         public IActionResult AddDrink([FromForm] DrinkOrder drinkOrder)
         {
@@ -474,14 +461,12 @@ namespace CatalinProiect2.Controllers
 
             if (ModelState.IsValid && drinkOrder.DrinkId > 0)
             {
-
                 drinkOrder.OrderId = orderId;
-
 
                 db.DrinkOrders.Add(drinkOrder);
                 db.SaveChanges();
 
-                TempData["message"] = "Bautura a fost adaugat in cosul dumneavostra";
+                TempData["message"] = "Bautura a fost adaugata in cosul dumneavoastra";
                 TempData["messageType"] = "alert-success";
             }
             else
@@ -489,6 +474,7 @@ namespace CatalinProiect2.Controllers
                 TempData["message"] = "Date invalide pentru adaugarea bauturii in cos";
                 TempData["messageType"] = "alert-danger";
             }
+
 
             return RedirectToAction("Show", new { id = drinkOrder.DrinkId });
         }

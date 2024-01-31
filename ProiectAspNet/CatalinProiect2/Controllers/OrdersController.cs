@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace CatalinProiect2.Controllers
 {
     public class OrdersController : Controller
@@ -85,12 +86,6 @@ namespace CatalinProiect2.Controllers
                 db.SaveChanges();
             }
 
-            var query = db.DrinkOrders.Where(b => b.Order.IsCart == true);
-            foreach (var order in query)
-            {
-                db.Remove(order);//stergem produsele dezactivate care sunt in cos
-            }
-
             db.SaveChanges();
 
             var userCart = db.Orders
@@ -144,13 +139,7 @@ namespace CatalinProiect2.Controllers
 
         public IActionResult Order()
         {
-            var todelete = db.DrinkOrders.Where(b =>  b.Order.IsCart == true);
-            foreach (var order in todelete)
-            {
-                db.Remove(order);//stergem produsele dezactivate care sunt in cosul utilizatorului
-            }
-            db.SaveChanges();
-
+           
 
             //cartul devine ordin acuma
             var query = db.Orders.Where(o => o.UserId == _userManager.GetUserId(User) && o.IsCart == true)
@@ -213,7 +202,7 @@ namespace CatalinProiect2.Controllers
                 {
                     TempData["message"] = "Resursa cautata nu poate fi gasita";
                     TempData["messageType"] = "alert-danger";
-                    return RedirectToAction("Index", "Products");
+                    return RedirectToAction("Index", "Drinks");
                 }
 
                 ViewBag.PoateModifica = true;

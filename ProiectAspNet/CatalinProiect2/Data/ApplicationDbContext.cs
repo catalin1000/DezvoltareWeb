@@ -24,7 +24,7 @@ namespace CatalinProiect2.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // definirea relatiei many-to-many dintre Article si Bookmark
+            // definirea relatiei many-to-many dintre Drink si Order
 
             base.OnModelCreating(modelBuilder);
 
@@ -33,7 +33,7 @@ namespace CatalinProiect2.Data
                 .HasKey(ab => new { ab.Id, ab.DrinkId, ab.OrderId });
 
 
-            // definire relatii cu modelele Bookmark si Article (FK)
+            // definire relatii cu modelele cu FK
 
             modelBuilder.Entity<DrinkOrder>()
                 .HasOne(ab => ab.Drink)

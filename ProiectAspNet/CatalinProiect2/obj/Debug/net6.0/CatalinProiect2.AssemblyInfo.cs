@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CatalinProiect2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed41352c1756b6767aa3519ff4dea5533c54ea65")]
 [assembly: System.Reflection.AssemblyProductAttribute("CatalinProiect2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CatalinProiect2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
